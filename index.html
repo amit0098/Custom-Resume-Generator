@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css"> 
+    
+    <title>Resume Genarator</title>
+</head>
+<body>
+
+    <!-- here goes html code -->
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By Amit-Kumar</p>
+        
+        <div class="row">
+
+            <div class="col-md-6">
+                <!-- first column-->
+                <h3>Personal Information</h3>
+
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter here"
+                     class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="ContactField">Your Contact</label>
+                    <input type="text" id="ContactField" placeholder="Enter here"
+                     class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="AddressField">Your Address</label>
+                    <textarea id="AddressField" placeholder="Enter here"
+                     class="form-control" rows="5"></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="">Select your photo</label>
+                    <input id="imgField" type="file" class="form-control">
+
+                </div>
+
+
+                <p class="text.secondary my-3">Important Links</p>
+
+                <div class="form-group mt-2">
+                    <label for="FbField">Facebook</label>
+                    <input type="text" id="FbField" placeholder="Enter here"
+                     class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instafield">Instagram</label>
+                    <input type="text" id="instafield" placeholder="Enter here"
+                     class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="LinkedField">LinkedIn</label>
+                    <input type="text" id="LinkedField" placeholder="Enter here"
+                     class="form-control">
+                </div>
+
+
+
+            </div>
+            <div class="col-md-6">
+                <!-- second column-->
+                <h3>Professional Information</h3>
+
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea id="ObjectiveField" rows="5" placeholder="Enter here"
+                     class="form-control"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience</label>
+                    <textarea placeholder="Enter here"
+                     class="form-control wefield"
+                     rows="3"></textarea>
+
+                     <!-- new textarea -->
+
+                     <div class="container text-center mt-2" id="weAddButton">
+                         <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                     </div>
+                </div>
+
+
+                <div class="form-group mt-2" id="aq">
+                    <label for="">Academic Qualification</label>
+                    <textarea placeholder="Enter here"
+                     class="form-control eqField"
+                     rows="3"></textarea>
+
+                     <div class="container text-center mt-2" id="aqAddButton">
+                         <button onclick="addNewAQField()" class="btn btn-primary btn-sm">Add</button>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center mt-3">
+            <button onclick="GenerateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+    <!-- cv template-->
+
+    <div class="container" id="cv-template">
+        
+        <div class="row">
+
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first column-->
+
+                <img src="https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg" alt="" class="img-fluid myimg"
+                id="imgTemplate"
+                />
+
+                <div class="container">
+                    <p id="nameT1">Amit-Kumar</p>
+                    <p id="ContactT">+91987654321</p>
+                    <p id="AddressT">Bangalore</p>
+                    <hr />
+                    <p id="fbT"><a href="#1">https://www.facebook.com/amit</a></p>
+                    <p id="InstaT"><a href="#1">https://www.instagram.com/amit</a></p>
+                    <p id="LinkedT"><a href="#1">https://www.LinkedIn.com/amit</a></p>
+                </div>
+            </div>    
+
+            <div class="col-md-8 py-5">
+                    <!-- second Column -->
+                    <h1 id="nameT2" class="text-center" style="font-weight: 980;" >Amit Kumar</h1>
+                   
+                    <!--Objective Card -->
+                    <div class="card mt-4 ">
+                        <div class="card-header background">
+                            <h3>Objective</h3>
+                        </div>
+                        <div class="card-body">
+                            <p id="ObejectiveT">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia veritatis ut quis consequatur rem quas laudantium quidem distinctio accusantium sit aliquam minima tenetur voluptatum aut porro cum repellat officiis, nobis suscipit sed ad corrupti nemo tempore! Ea consequatur consectetur qui alias culpa unde praesentium. Dolorum quibusdam pariatur inventore sapiente dignissimos!</p>
+                        </div>
+                    </div>
+
+                    <!--Work Experience-->
+
+                    <div class="card mt-4 ">
+                        <div class="card-header background">
+                            <h3>Work Experience</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <ul id="weT">
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ex?</li>
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ex?</li>
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ex?</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+                    <!--Academic Qualification-->
+
+                    <div class="card mt-4 ">
+                        <div class="card-header background">
+                            <h3>Academic Qualification</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <ul id="aqT">
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ex?</li>
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ex?</li>
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ex?</li>
+                            </ul>   
+                        </div>
+                    </div>
+
+                    <div class="container mt-3 text-center">
+                        <button onclick="printCV()" class="btn background">Print CV</button>
+                    </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
